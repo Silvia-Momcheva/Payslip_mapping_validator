@@ -20,12 +20,19 @@ Each test is located in its own folder under `tests/` with:
 ## Tests
 
 (1) The File is of type excel
+
 (2) The GTN file contains line breaks i.e. empty lines
+
 (3) The GTN file header structure has changed e.g. there are two header rows instead of one
+
 (4) Employees are Present in the Payrun File but missing in the GTN file.
+
 (5) Employees are Present in the GTN but missing in the Payrun File.
+
 (6) Pay Elements in the GTN file do not have a mapping in the Payrun File.
+
 (7) Pay Elements in the Payrun file do not have a mapping in the GTN File.
+
 (8) For Pay Elements in the GTN file, the values have a numeric type.
 
 ## Project Structure
@@ -46,14 +53,21 @@ Each test verifies a specific condition required for correct data mapping:
 
 ## Test No. Name Description
 
-1 File Type Verifies that both GTN.xlsx and Payrun.xlsx exist and are Excel files.
-2 Blank Lines Checks that there are no completely blank rows in the GTN file.
-3 Multiple Headers Ensures the GTN file does not have duplicate headers (e.g. repeated row).
-4 Missing in GTN Checks that all employees in Payrun also exist in the GTN file.
-5 Missing in Payrun Checks that all employees in GTN exist in the Payrun file.
-6 Unmapped GTN Columns Ensures all GTN pay elements have a corresponding mapping.
-7 Unmapped Payrun Columns Ensures all Payrun pay elements have a corresponding mapping.
-8 Non-Numeric GTN Values Validates that mapped numeric GTN columns contain only numeric values.
+1 File Type -- Verifies that both GTN.xlsx and Payrun.xlsx exist and are Excel files.
+
+2 Blank Lines -- Checks that there are no completely blank rows in the GTN file.
+
+3 Multiple Headers -- Ensures the GTN file does not have duplicate headers (e.g. repeated row).
+
+4 Missing in GTN -- Checks that all employees in Payrun also exist in the GTN file.
+
+5 Missing in Payrun -- Checks that all employees in GTN exist in the Payrun file.
+
+6 Unmapped GTN Columns -- Ensures all GTN pay elements have a corresponding mapping.
+
+7 Unmapped Payrun Columns -- Ensures all Payrun pay elements have a corresponding mapping.
+
+8 Non-Numeric GTN Values -- Validates that mapped numeric GTN columns contain only numeric values.
 
 ## How to Run the Tests
 
