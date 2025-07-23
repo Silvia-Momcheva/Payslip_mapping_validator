@@ -51,8 +51,6 @@ Each test is located in its own folder under `tests/` with:
 
 Each test verifies a specific condition required for correct data mapping:
 
-## Test No. Name Description
-
 1 File Type -- Verifies that both GTN.xlsx and Payrun.xlsx exist and are Excel files.
 
 2 Blank Lines -- Checks that there are no completely blank rows in the GTN file.
@@ -92,8 +90,12 @@ You should see all tests passing.
 Python 3.8+
 
 Main libraries:
+
 pandas
+
 pytest
+
+openpyxl
 
 See requirements.txt for full list.
 
