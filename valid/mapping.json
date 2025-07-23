@@ -1,0 +1,19 @@
+{
+  "mappings": {
+    "Net Pay": {
+      "vendor": "element6",
+      "code": null,
+      "map": true
+    },
+    "Tax": {
+      "vendor": "element1",
+      "code": null,
+      "map": true
+    },
+    "BIKHealth": {
+      "vendor": "element2",
+      "code": null,
+      "map": true
+    }
+  }
+}
