@@ -31,9 +31,13 @@ Each test is located in its own folder under `tests/` with:
 ## Project Structure
 
 ├── tests/ ← Test datasets where each test is designed to FAIL
+
 │ └── test_X_name/ ← One folder per test
+
 ├── valid/ ← Clean dataset that PASSES all tests
+
 ├── requirements.txt
+
 └── README.md
 
 ## Test Descriptions
