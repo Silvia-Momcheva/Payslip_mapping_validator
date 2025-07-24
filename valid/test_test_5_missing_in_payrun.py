@@ -1,12 +1,20 @@
 import os
 import pandas as pd
-import json
 
 def test_employees_missing_in_payrun():
     folder = os.path.dirname(__file__)
     gtn = pd.read_excel(os.path.join(folder, 'GTN.xlsx'))
     payrun = pd.read_excel(os.path.join(folder, 'Payrun.xlsx'))
-    with open(os.path.join(folder, 'mapping.json')) as f:
-        mapping = json.load(f)
-    missing = set(gtn['employee_id'].astype(str)) - set(payrun['Employee_ID'].astype(str))
+
+    # Normalize column names
+    gtn.columns = [col.strip().lower().replace(" ", "_") for col in gtn.columns]
+    payrun.columns = [col.strip().lower().replace(" ", "_") for col in payrun.columns]
+
+    assert 'employee_id' in gtn.columns, "Missing 'employee_id' in GTN"
+    assert 'employee_id' in payrun.columns, "Missing 'employee_id' in Payrun"
+
+    gtn_ids = pd.to_numeric(gtn['employee_id'], errors='coerce').dropna().astype(int).astype(str)
+    payrun_ids = pd.to_numeric(payrun['employee_id'], errors='coerce').dropna().astype(int).astype(str)
+
+    missing = set(gtn_ids) - set(payrun_ids)
     assert not missing, f"Employees in GTN but missing in Payrun: {missing}"
